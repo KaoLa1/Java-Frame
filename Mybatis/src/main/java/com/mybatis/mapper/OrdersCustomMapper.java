@@ -1,8 +1,8 @@
 package com.mybatis.mapper;
 
+import com.mybatis.entity.Orders;
 import com.mybatis.entity.OrdersCustom;
 import com.mybatis.entity.User;
-import com.mybatis.entity.UserQueryVo;
 
 import java.util.List;
 
@@ -15,19 +15,22 @@ public interface OrdersCustomMapper {
     List<OrdersCustom> findOrdersUser();
 
     /**
-     * 根据用户名查询用户
+     * 查询订单关联查询用户信息(ResultMap)
      *
      * @return
      */
-    User findUserByUsername(String username);
+    List<Orders> findOrdersUserResultMap();
 
     /**
-     *  查询用户个数
-     * @param userQueryVo
+     *  查询订单关联用户及订单明细
      * @return
      */
-    int findUserCount(UserQueryVo userQueryVo);
+    List<Orders> findOrdersAndOrderDetailResultMap();
 
-
+    /**
+     * 查询用户购买商品信息
+     * @return
+     */
+    List<User> findUserAndItemsResultMap();
 
 }

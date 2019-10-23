@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Builder
@@ -29,4 +30,7 @@ public class User {
      * 地址
      */
     private String address;
+
+    //用户创建的订单列表
+    private List<Orders> ordersList;
 }
