@@ -1,4 +1,4 @@
-package annotion.com;
+package annotion;
 
 import org.springframework.stereotype.Component;
 

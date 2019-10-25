@@ -1,6 +1,6 @@
-package springdata.com.Dao;
+package springdata.Dao;
 
-import springdata.com.domain.User;
+import springdata.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

@@ -1,6 +1,6 @@
-package springdata.com.util;
+package springdata.util;
 
-import springdata.com.domain.User;
+import springdata.domain.User;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;

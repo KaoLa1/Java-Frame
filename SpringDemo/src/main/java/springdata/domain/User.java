@@ -1,4 +1,4 @@
-package springdata.com.domain;
+package springdata.domain;
 
 public class User {
     private  Integer id;

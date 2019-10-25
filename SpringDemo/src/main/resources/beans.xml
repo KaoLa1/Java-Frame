@@ -4,10 +4,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-    <bean id="u" class="ioc.com.dao.UserDao">
+    <bean id="u" class="ioc.dao.UserDao">
     </bean>
 
-    <bean id="userService" class="ioc.com.service.UserService">
+    <bean id="userService" class="ioc.service.UserService">
         <!-- <property name="userdao" ref="u" /> -->
         <constructor-arg>
             <ref bean="u"/>

@@ -33,4 +33,11 @@ public interface OrdersCustomMapper {
      */
     List<User> findUserAndItemsResultMap();
 
+    /**
+     * 查询订单关联查询用户信息(懒加载)
+     *
+     * @return
+     */
+    List<Orders> findOrdersUserLazyLoading();
+
 }

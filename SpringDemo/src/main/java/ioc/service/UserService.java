@@ -1,8 +1,8 @@
-package ioc.com.service;
+package ioc.service;
 
 
-import ioc.com.dao.UserDao;
-import ioc.com.model.User;
+import ioc.dao.UserDao;
+import ioc.model.User;
 
 public class UserService {
 	private UserDao userdao;

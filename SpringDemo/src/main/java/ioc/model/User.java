@@ -1,4 +1,4 @@
-package ioc.com.model;
+package ioc.model;
 
 public class User {
 	private String username;

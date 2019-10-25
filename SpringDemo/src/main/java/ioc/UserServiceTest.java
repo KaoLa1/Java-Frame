@@ -1,8 +1,7 @@
-package ioc.com;
+package ioc;
 
-import ioc.com.model.User;
-import ioc.com.service.UserService;
-import org.junit.Test;
+import ioc.model.User;
+import ioc.service.UserService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class UserServiceTest {

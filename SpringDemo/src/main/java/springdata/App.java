@@ -1,6 +1,6 @@
-package springdata.com;
+package springdata;
 
-import springdata.com.Dao.UserDao;
+import springdata.Dao.UserDao;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

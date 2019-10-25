@@ -3,6 +3,17 @@
 <configuration>
     <!--加载配置文件-->
     <properties resource="db.properties"/>
+
+    <!-- 全局配置参数，需要时再设置 -->
+    <settings>
+        <!-- 打开延迟加载 的开关 -->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!-- 将积极加载改为消极加载即按需要加载 -->
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <!--开启二级缓存-->
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
     <!-- 和spring整合后 environments配置将废除-->
     <environments default="development">
         <environment id="development">
