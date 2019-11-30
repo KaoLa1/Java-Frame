@@ -13,6 +13,7 @@ import java.util.List;
  * @date : 2019-11-26 11:31
  **/
 @Mapper
+@Repository
 public interface UserMapper {
 
     /**
@@ -22,5 +23,10 @@ public interface UserMapper {
      */
     List<User> query(@Param("user") User user);
 
+    /**
+     * 根据Id查询详细信息
+     * @param id
+     * @return
+     */
     User findById(String id);
 }
