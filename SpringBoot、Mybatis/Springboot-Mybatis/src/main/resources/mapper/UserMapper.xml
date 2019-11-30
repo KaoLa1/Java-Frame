@@ -1,42 +1,22 @@
-<?xml version = "1.0" encoding = "UTF-8"?>
-<!DOCTYPE mapper PUBLIC
-        "-//mybatis.org//DTD com.example.Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.mapper.UserMapper">
-	<resultMap id="result" type="User">
-		<result property="name" column="name" />
-		<result property="password" column="password" />
-		<result property="number" column="number"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-	</resultMap>
+<mapper namespace="com.muye.kl.mapper.UserMapper">
+    <resultMap id="userMap" type="com.muye.kl.entity.User">
+        <result property="id" column="id"/>
+        <result property="addr" column="addr"/>
+        <result property="age" column="age"/>
+        <result property="sex" column="sex"/>
+        <result property="name" column="name"/>
+    </resultMap>
+    
+    <select id="query" resultMap="userMap">
+           SELECT * FROM user
+    </select>
 
-	<select id="ListUser" resultMap="result">
-		SELECT * FROM user
-	</select>
+    <select id="findById" parameterType="java.lang.String" resultMap="userMap">
+            SELECT * FROM user WHERE  id = #{id}
+    </select>
 
-	<select id="findUserByName" resultMap="result">
-		SELECT * FROM user where name=#{name}
-	</select>
 
-	<insert id="insertUser" parameterType="User"
-		keyProperty="id" useGeneratedKeys="true">
-		INSERT INTO user
-		(
-		id,name,password,number
-		)
-		VALUES (
-		#{id},
-		#{name, jdbcType=VARCHAR},
-		#{password, jdbcType=VARCHAR},
-		#{number}
-		)
-	</insert>
-	
-	<delete id="delete" parameterType="int">
-		delete from user where id=#{id}
-	</delete>
-	
-	<update id="Update" parameterType="com.example.demo.entity.User">
-	update user set user.name=#{name},user.password=#{password},user.number=#{number} where user.id=#{id}
-	</update>
 </mapper>
