@@ -1,8 +1,11 @@
-package com.muye.kl.utils;
+package com.muye.kl.demo.utils;
 
 import java.io.File;
 import java.io.InputStream;
 
+/**
+ * @author gwh
+ */
 public class TestFileUtil {
 
     public static InputStream getResourcesFileInputStream(String fileName) {

@@ -1,4 +1,4 @@
-package com.muye.kl.entity;
+package com.muye.kl.demo.entity.po;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 import lombok.AllArgsConstructor;
@@ -14,11 +14,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class Person {
     /**
      * 主键
      */
-    private int id;
+    private String id;
     /**
      * 姓名
      */
@@ -28,7 +28,7 @@ public class User {
      * 年龄
      */
     @ExcelProperty("年龄")
-    private int age;
+    private String age;
     /**
      * 性别
      */

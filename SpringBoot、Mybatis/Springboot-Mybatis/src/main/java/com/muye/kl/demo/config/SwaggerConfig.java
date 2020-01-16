@@ -1,4 +1,4 @@
-package com.muye.kl.config;
+package com.muye.kl.demo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +10,9 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * @author gwh
+ */
 
 @Configuration
 @EnableSwagger2
@@ -20,7 +23,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.muye"))
+                .apis(RequestHandlerSelectors.basePackage("com.muye.kl.demo.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

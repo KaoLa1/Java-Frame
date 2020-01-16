@@ -1,7 +1,7 @@
-package com.muye.kl.mapper;
+package com.muye.kl.demo.mapper;
 
 
-import com.muye.kl.entity.User;
+import com.muye.kl.demo.entity.po.Person;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -14,19 +14,27 @@ import java.util.List;
  **/
 @Mapper
 @Repository
-public interface UserMapper {
+public interface PersonMapper {
 
     /**
-     * 查询所有的User
+     * 查询所有的Person
      * @param user
      * @return
      */
-    List<User> query(@Param("user") User user);
+    List<Person> query(@Param("user") Person user);
 
     /**
      * 根据Id查询详细信息
      * @param id
      * @return
      */
-    User findById(String id);
+    Person findById(String id);
+
+    /**
+     * 批量插入
+     *
+     * @param userList
+     * @return
+     */
+    int insertBatch(List<Person> userList);
 }
