@@ -3,6 +3,9 @@ package annotion;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+/**
+ * @author gwh
+ */
 public class TestMain {
     public static void main(String[] args) {
 

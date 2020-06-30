@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bonc.industry.txsp.mapper.RmRiskInfoStaTMapper">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.bonc.industry.txsp.entity.RmRiskInfoStaT" id="rmRiskInfoStaTMap">
+        <result property="statisticId" column="STATISTIC_ID"/>
+        <result property="statisticType" column="STATISTIC_TYPE"/>
+        <result property="statisticCategoryCode" column="STATISTIC_CATEGORY_CODE"/>
+        <result property="statisticCategoryValue" column="STATISTIC_CATEGORY_VALUE"/>
+        <result property="statisticDate" column="STATISTIC_DATE"/>
+        <result property="statisticData" column="STATISTIC_DATA"/>
+    </resultMap>
+    
+    
+    <select id="query" resultMap="rmRiskInfoStaTMap">
+		SELECT
+		*
+				
+		FROM rm_risk_info_sta_t 
+				
+		<where>
+			<if test="rmRiskInfoStaT.statisticId !=null and rmRiskInfoStaT.statisticId !=''">
+				AND STATISTIC_ID = #{rmRiskInfoStaT.statisticId}
+			</if>
+			<if test="rmRiskInfoStaT.statisticType !=null and rmRiskInfoStaT.statisticType !=''">
+				AND STATISTIC_TYPE = #{rmRiskInfoStaT.statisticType}
+			</if>
+			<if test="rmRiskInfoStaT.statisticCategoryCode !=null and rmRiskInfoStaT.statisticCategoryCode !=''">
+				AND STATISTIC_CATEGORY_CODE = #{rmRiskInfoStaT.statisticCategoryCode}
+			</if>
+			<if test="rmRiskInfoStaT.statisticCategoryValue !=null and rmRiskInfoStaT.statisticCategoryValue !=''">
+				AND STATISTIC_CATEGORY_VALUE = #{rmRiskInfoStaT.statisticCategoryValue}
+			</if>
+			<if test="rmRiskInfoStaT.statisticDate !=null and rmRiskInfoStaT.statisticDate !=''">
+				AND STATISTIC_DATE = #{rmRiskInfoStaT.statisticDate}
+			</if>
+			<if test="rmRiskInfoStaT.statisticData !=null and rmRiskInfoStaT.statisticData !=''">
+				AND STATISTIC_DATA = #{rmRiskInfoStaT.statisticData}
+			</if>
+		
+		</where>
+		
+	</select>
+	
+	
+	<select id="findById" resultMap="rmRiskInfoStaTMap">
+	    SELECT
+	      *
+	     	    FROM rm_risk_info_sta_t  
+	    	    WHERE    STATISTIC_ID = #{statisticId}       	</select>
+  	<!--增加-->
+  	<insert id="create" parameterType="com.bonc.industry.txsp.entity.RmRiskInfoStaT">
+        INSERT INTO rm_risk_info_sta_t 
+        	(STATISTIC_ID,STATISTIC_TYPE,STATISTIC_CATEGORY_CODE,STATISTIC_CATEGORY_VALUE,STATISTIC_DATE,STATISTIC_DATA)
+        VALUES
+        	(#{statisticId},#{statisticType},#{statisticCategoryCode},#{statisticCategoryValue},#{statisticDate},#{statisticData})
+    </insert>
+  	
+  	<!--更新-->
+  	<update id="update" parameterType="com.bonc.industry.txsp.entity.RmRiskInfoStaT">
+     	UPDATE rm_risk_info_sta_t 
+     	SET 
+     		<if test="statisticId !=null and statisticId !=''">
+				STATISTIC_ID = #{statisticId}
+			</if>
+	 		<if test="statisticType !=null and statisticType !=''">
+				,STATISTIC_TYPE = #{statisticType}
+			</if>
+	 		<if test="statisticCategoryCode !=null and statisticCategoryCode !=''">
+				,STATISTIC_CATEGORY_CODE = #{statisticCategoryCode}
+			</if>
+	 		<if test="statisticCategoryValue !=null and statisticCategoryValue !=''">
+				,STATISTIC_CATEGORY_VALUE = #{statisticCategoryValue}
+			</if>
+	 		<if test="statisticDate !=null and statisticDate !=''">
+				,STATISTIC_DATE = #{statisticDate}
+			</if>
+	 		<if test="statisticData !=null and statisticData !=''">
+				,STATISTIC_DATA = #{statisticData}
+			</if>
+	      	WHERE    STATISTIC_ID = #{statisticId}         </update>
+  	<!--删除-->
+  	<delete id="deleteById">
+        DELETE FROM rm_risk_info_sta_t 
+        WHERE    STATISTIC_ID = #{statisticId}         </delete>
+
+    <!--批量删除-->
+    <delete id="deleteBatch">
+        DELETE FROM rm_risk_info_sta_t
+		where    STATISTIC_ID       in (
+        <foreach collection="array" item="id" separator=",">
+            #{id}
+        </foreach>
+        )
+    </delete>
+</mapper>

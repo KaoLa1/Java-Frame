@@ -22,4 +22,5 @@ public class Information {
     private String ip;
     private String port;
     private String databaseName;
+
 }

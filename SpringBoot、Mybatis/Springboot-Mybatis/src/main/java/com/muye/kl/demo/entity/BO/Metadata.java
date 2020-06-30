@@ -1,8 +1,6 @@
 package com.muye.kl.demo.entity.BO;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.io.Serializable;
 
@@ -16,8 +14,9 @@ import java.io.Serializable;
  * @date : 2019/12/21 9:16
  */
 @Data
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = false)
 public class Metadata implements Serializable  {
 
 

@@ -4,6 +4,9 @@ package ioc.service;
 import ioc.dao.UserDao;
 import ioc.model.User;
 
+/**
+ * @author gwh
+ */
 public class UserService {
 	private UserDao userdao;
 
@@ -11,7 +14,9 @@ public class UserService {
 		userdao.save(user);
 	}
 
-	// 设值注入
+	/**
+	 * 设值注入
+	 */
 	public UserDao getUserdao() {
 		return userdao;
 	}
@@ -20,7 +25,9 @@ public class UserService {
 		this.userdao = userdao;
 	}
 
-	// 构造注入
+	/**
+	 * 构造注入
+ 	 */
 	public UserService(UserDao userdao) {
 		super();
 		this.userdao = userdao;

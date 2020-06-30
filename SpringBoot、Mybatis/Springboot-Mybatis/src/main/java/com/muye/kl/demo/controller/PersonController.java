@@ -23,8 +23,6 @@ import java.util.List;
 @Api(value = "用户信息", tags = "用户信息")
 public class PersonController {
 
-    @Value("${conf.uploadPath}")
-    private String uploadPath;
 
     @Autowired
     PersonService userService;
@@ -38,10 +36,10 @@ public class PersonController {
 
     @GetMapping("/upload")
     @ApiOperation("上传文件")
-    public ResponseEntity<Integer> upload(@RequestParam("url") String url) {
+    public ResponseEntity<Integer> upload(@RequestParam("path") String path) {
         List<Person> user = new ArrayList<>();
         try {
-            List<List<String>> list = ReadExcelUtil.readExcelInfo(url);
+            List<List<String>> list = ReadExcelUtil.readExcelInfo(path);
             for (int i = 1; i < list.size(); i++) {
                 Person user1 = new Person();
                 user1.setId(list.get(i).get(0));

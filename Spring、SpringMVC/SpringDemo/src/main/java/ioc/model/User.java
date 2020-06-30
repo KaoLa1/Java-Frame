@@ -1,23 +1,21 @@
 package ioc.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * @author gwh
+ */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
-	private String username;
-	private String age;
 
-	public String getUsername() {
-		return username;
-	}
+    private String username;
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getAge() {
-		return age;
-	}
-
-	public void setAge(String age) {
-		this.age = age;
-	}
+    private String age;
 
 }

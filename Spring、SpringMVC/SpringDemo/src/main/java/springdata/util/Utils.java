@@ -8,27 +8,42 @@ import org.springframework.jdbc.core.RowMapper;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author gwh
+ */
 public class Utils {
 
-    //通过update修改数据
+    /**
+     * 修改数据
+     * @param jdbcTemplate
+     */
     public static void updateData(JdbcTemplate jdbcTemplate) {
         String sql = "update user set name = ?,deptid = ? where id = ?";
         jdbcTemplate.update(sql, new Object[]{"gaoweihua", 2, 1});
     }
 
-    //通过update删除数据
+
+    /**
+     * 删除数据
+     * @param jdbcTemplate
+     */
     public static void deleteData(JdbcTemplate jdbcTemplate) {
         String sql = "delete from user where id =?";
         jdbcTemplate.update(sql, 1);
     }
 
-    //通过update插入数据
+    /**
+     * 插入数据
+     */
     public static void insertData(JdbcTemplate jdbcTemplate) {
         String sql = "insert into user (id,name,deptid) values (?,?,?)";
         jdbcTemplate.update(sql, new Object[]{3, "hua", 33});
     }
 
-    //批量插入数据
+    /**
+     * 批量插入数据
+     * @param jdbcTemplate
+     */
     public static void batchInsertDate(JdbcTemplate jdbcTemplate){
         String sql = "insert into user (id,name,deptid) values (?,?,?)";
         List<Object[]> batchArgs = new ArrayList<Object[]>();

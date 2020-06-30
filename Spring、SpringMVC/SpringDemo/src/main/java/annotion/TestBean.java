@@ -3,7 +3,10 @@ package annotion;
 import org.springframework.stereotype.Component;
 
 
-//添加注册bean的注解
+
+/**
+ * 添加注册bean的注解
+ */
 @Component
 public class TestBean {
 

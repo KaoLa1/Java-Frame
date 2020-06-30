@@ -80,6 +80,11 @@
             <artifactId>mybatis</artifactId>
             <version>3.4.4</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.8</version>
+        </dependency>
         <!--Mybatis Spring-->
         <dependency>
             <groupId>org.mybatis</groupId>

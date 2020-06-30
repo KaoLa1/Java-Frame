@@ -4,6 +4,9 @@ import springdata.Dao.UserDao;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+/**
+ * @author gwh
+ */
 public class App {
     public static void main(String[] args) {
         //启动IOC容器
