@@ -134,18 +134,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <plugin>
-                <groupId>com.bonc.industry</groupId>
-                <artifactId>bonc-industry-generator-plugin</artifactId>
-                <version>0.0.5-SNAPSHOT</version>
-                <configuration>
-                    <!--<tplDir>${project.basedir}/src/main/resources</tplDir>-->
-                    <!--<outputDir>${project.basedir}/src/main/resources</outputDir>-->
-                    <base>${project.basedir}/src/main/resources</base>
-                    <prope>${project.basedir}/src/main/resources/generator.properties</prope>
-                    <json>${project.basedir}/src/main/resources/generator.json</json>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 
