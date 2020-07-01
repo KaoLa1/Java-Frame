@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/exception")
-public class TestController {
+public class ExceptionController {
+
     @GetMapping("/testException")
     public String testException() throws Exception{
         throw new MissingServletRequestParameterException("name","String");
