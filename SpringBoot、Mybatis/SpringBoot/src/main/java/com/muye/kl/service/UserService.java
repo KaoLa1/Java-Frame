@@ -1,7 +1,6 @@
 package com.muye.kl.service;
 
 import com.muye.kl.entity.User;
-import org.springframework.stereotype.Service;
 
 public interface UserService {
 
